@@ -46,8 +46,8 @@ function changeStyles() {
 //Function toiIncrease the font size by 2 in the text area
 function changeFontSizeBy2() {
     let textArea = document.getElementById("textspace");
-    let currentFontSize = textArea.style.fontSize;
-    textArea.style.fontSize = parseInt(currentFontSize) + 2 + "pt";
+    let currentFontSize = window.getComputedStyle(textArea).fontSize;
+    textArea.style.fontSize = (Math.ceil((parseInt(currentFontSize)) * 0.75) + 2 + "pt");
 }
 
 //Function with timer to increase the font size by 2 continuosly
