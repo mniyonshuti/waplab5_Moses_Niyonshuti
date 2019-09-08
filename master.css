@@ -1,0 +1,108 @@
+.gridContainer{
+    display: grid;    
+    grid-template-columns: 250px 420px 250px 420px;
+    grid-template-rows: 40px 10px 450px 40px;
+    grid-template-areas: 
+        "upper upper upper upper"
+        "middle middle middle middle"
+        "right centre centre2 left2"
+        "lower lower lower lower";        
+} 
+.upper{
+    grid-area: upper;
+    background-color: aqua;
+}
+
+.right{
+    grid-area: right;
+}
+
+.centre{
+    grid-area: centre;
+}
+
+.centre2{
+    grid-area: centre2;
+}
+
+.middle{
+    grid-area: middle;
+}
+.left2{
+    grid-area: left2;
+}
+
+.lower{
+    grid-area: lower;
+    background-color: dimgrey;
+}
+
+.firstBodyParagraph{
+    text-decoration: underline;
+    font-size: 14pt;
+}
+.labes{
+    display: inline-block;
+    width: 250px;
+    padding: 11px;
+    font-weight: bold;
+}
+
+.inputTypeOne{
+    display: inline-block;
+    margin: 10px;
+    width: 340px;
+}
+.selectType{
+    display: inline-block;
+    margin: 10px;
+    width: 340px;
+}
+
+textarea{
+    margin: 10px;
+    width: 340px;
+}
+
+.labelTextArea{
+    display: inline-block;
+    width: 300px;
+    padding: 10px;
+    height: 85px;
+    font-weight: bold;
+}
+.subTittle{
+    text-decoration: underline;
+    font-size: 14pt;
+}
+
+.empty{
+    padding: 12px;
+}
+.empty2{
+    padding: 20px;
+}
+
+.labelCheque{
+    display: inline-block;
+    width: 250px;
+    padding: 11px;
+    padding-top: 90px;
+    font-weight: bold;
+}
+h1{
+    display: inline;
+}
+
+.upper > select{
+    padding-left: 20px;
+    background-color: aqua;
+}
+.submitButtons{
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+
+

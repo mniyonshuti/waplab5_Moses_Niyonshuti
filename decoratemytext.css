@@ -1,0 +1,26 @@
+legend{
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.textspace{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+
+.modifiedtextspace{
+    text-decoration: underline;
+    color: green;
+    font-weight: bold; 
+}
+
+.newbodyclass{
+    background-image: url("http://www.cs.washington.edu/education/courses/190m/CurrentQtr/labs/6/hundred-dollar-bill.jpg");
+    font-weight: bolder;
+}
+.controlsNew{
+    background-color: aqua;
+    width: 400px;
+}
