@@ -3,6 +3,8 @@
 function eventHandler() {
     let decoraionsButton = document.getElementById("digger_decorations");
     let stopDecoraions = document.getElementById("stop_decorations");
+    let igpayAtinlay = document.getElementById("igpay_atinlay");
+    let malkovitch = document.getElementById("malkovitch");
     // decoraionsButton.onclick = printHello;
     // decoraionsButton.onclick = changeFontSize;
     // decoraionsButton.onclick = changeFontSizeBy2;
@@ -11,6 +13,9 @@ function eventHandler() {
 
     let decorationsCheckBox = document.getElementById("bling");
     decorationsCheckBox.onchange = changeStyles;
+
+    igpayAtinlay.onclick = changeConsonats;
+    malkovitch.onclick = replaceLongWords;
 
 }
 
@@ -61,4 +66,59 @@ function stopTimer() {
     clearInterval(timer);
 }
 
+//Function to change words begginign with consonats
+function changeConsonats(){
+    let textArea = document.getElementById("textspace");
+    let enteredText = textArea.value;
+    let wordsEntered = enteredText.split(" "); 
+    textArea.value = twistWords(wordsEntered);
+}
+
+//Function that twists the text as per the rules of consonants and vowels
+function twistWords(words){
+    let currentWord = null;    
+    let currentWordCharArray = null;
+    for( let i = 0; i < words.length; i ++){
+        currentWord = words[i];
+        currentWordCharArray = words[i].split('');        
+        if(indexOfForstVowel(currentWordCharArray) === 0){
+            words[i] = currentWord + "ay";
+        }
+        else{
+            words[i] = currentWord.substring(indexOfForstVowel(currentWord), currentWord.length) +
+            currentWord.substring(0, indexOfForstVowel(currentWord)) + "ay";
+        }
+    }
+    return words.reduce(function(prev, elem){
+        return prev + " " + elem;
+    }); ;
+}
+
+//Function that returns the index of the first vowel in a particular word
+function indexOfForstVowel(word){
+    let indexOfForstVowel = 0;
+    let vowels = ['a','e','i','o','u','A','E','I','O','U'];
+    for( let i = 0; i < word.length; i ++){
+        if(vowels.includes(word[i])){
+            indexOfForstVowel = i;
+            break;
+        }       
+    }
+    return indexOfForstVowel;
+}
+
+
+//Function that replaces words that have length greater than or equal to 5
+function replaceLongWords(words){
+    let textArea = document.getElementById("textspace");
+    let enteredText = textArea.value;
+    let wordsEntered = enteredText.split(" ");
+    let replacedWords = wordsEntered.map(function(elem){
+        if(elem.length >= 5) return "Malkovitch"
+        return elem;
+    });
+    textArea.value = replacedWords.reduce(function(prev, elem){
+        return prev + " " + elem;
+    });
+} 
 window.onload = eventHandler;
